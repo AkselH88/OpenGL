@@ -1,0 +1,2 @@
+C:/Users/aksel/OneDrive/Skrivebord/OpenGL/Tales of the Norse Gods/Tales of the Norse Gods/src/vendor/glm/out/build/x64-Debug (default)/CMakeFiles/edit_cache.dir
+C:/Users/aksel/OneDrive/Skrivebord/OpenGL/Tales of the Norse Gods/Tales of the Norse Gods/src/vendor/glm/out/build/x64-Debug (default)/CMakeFiles/rebuild_cache.dir
