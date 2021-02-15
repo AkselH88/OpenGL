@@ -148,7 +148,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Camera.cpp" />
-    <ClCompile Include="src\Collision.cpp" />
     <ClCompile Include="src\Scene\Character.cpp" />
     <ClCompile Include="src\Scene\Level.cpp" />
     <ClCompile Include="src\Scene\Object.cpp" />
@@ -316,7 +315,6 @@
     <None Include="src\vendor\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Collision.h" />
     <ClInclude Include="src\Scene\Character.h" />
     <ClInclude Include="src\Scene\Level.h" />
     <ClInclude Include="src\Scene\Object.h" />
