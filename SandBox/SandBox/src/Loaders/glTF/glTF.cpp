@@ -371,13 +371,13 @@ void glTF_file_data(const std::string& filepath, Scene::SceneContentConteiner* S
                     throw("need to add matrix handeler");
                     break;
                 case (size_t)AnimationTarget::TRANSLATION:
-                    a.addTranslation(node.name, *&resourceReader->ReadBinaryData<float>(document, outputAccessor));
+                    a.addTranslation(node.name, resourceReader->ReadBinaryData<float>(document, outputAccessor));
                     break;
                 case (size_t)AnimationTarget::ROTATION:
-                    a.addQuaternion(node.name, *&resourceReader->ReadBinaryData<float>(document, outputAccessor));
+                    a.addQuaternion(node.name, resourceReader->ReadBinaryData<float>(document, outputAccessor));
                     break;
                 case (size_t)AnimationTarget::SCALE:
-                    a.addScale(node.name, *&resourceReader->ReadBinaryData<float>(document, outputAccessor));
+                    a.addScale(node.name, resourceReader->ReadBinaryData<float>(document, outputAccessor));
                     break;
                 case (size_t)AnimationTarget::MORPH:
                     std::cout << "morph" << std::endl;
@@ -403,22 +403,22 @@ void glTF_file_data(const std::string& filepath, Scene::SceneContentConteiner* S
                 const Microsoft::glTF::Accessor& accessor = document.accessors.Get(attributs.second);
 
                 if (accessor.componentType == 5121)
-                    m.AddPrimetive(attributs.first, accessor.componentType, accessor.type, *&resourceReader->ReadBinaryData<unsigned char>(document, accessor));
+                    m.AddPrimetive(attributs.first, accessor.componentType, accessor.type, resourceReader->ReadBinaryData<unsigned char>(document, accessor));
                 else if (accessor.componentType == 5123)
-                    m.AddPrimetive(attributs.first, accessor.componentType, accessor.type, *&resourceReader->ReadBinaryData<unsigned short>(document, accessor));
+                    m.AddPrimetive(attributs.first, accessor.componentType, accessor.type, resourceReader->ReadBinaryData<unsigned short>(document, accessor));
                 else if (accessor.componentType == 5124)
-                    m.AddPrimetive(attributs.first, accessor.componentType, accessor.type, *&resourceReader->ReadBinaryData<int>(document, accessor));
+                    m.AddPrimetive(attributs.first, accessor.componentType, accessor.type, resourceReader->ReadBinaryData<int>(document, accessor));
                 else if (accessor.componentType == 5125)
-                    m.AddPrimetive(attributs.first, accessor.componentType, accessor.type, *&resourceReader->ReadBinaryData<unsigned int>(document, accessor));
+                    m.AddPrimetive(attributs.first, accessor.componentType, accessor.type, resourceReader->ReadBinaryData<unsigned int>(document, accessor));
                 else if (accessor.componentType == 5126)
-                    m.AddPrimetive(attributs.first, accessor.componentType, accessor.type, *&resourceReader->ReadBinaryData<float>(document, accessor));
+                    m.AddPrimetive(attributs.first, accessor.componentType, accessor.type, resourceReader->ReadBinaryData<float>(document, accessor));
             }
             const Microsoft::glTF::Accessor& indicesAccessor = document.accessors.Get(primetives.indicesAccessorId);
 
             if (indicesAccessor.componentType == 5123)
-                m.AddIndices(indicesAccessor.componentType, *&resourceReader->ReadBinaryData<unsigned short>(document, indicesAccessor));
+                m.AddIndices(indicesAccessor.componentType, resourceReader->ReadBinaryData<unsigned short>(document, indicesAccessor));
             else if (indicesAccessor.componentType == 5125)
-                m.AddIndices(indicesAccessor.componentType, *&resourceReader->ReadBinaryData<unsigned int>(document, indicesAccessor));
+                m.AddIndices(indicesAccessor.componentType, resourceReader->ReadBinaryData<unsigned int>(document, indicesAccessor));
 
 
             const auto textures = document.materials.Elements()[std::stoi(primetives.materialId)].GetTextures();
@@ -442,7 +442,7 @@ void glTF_file_data(const std::string& filepath, Scene::SceneContentConteiner* S
                         }
                         else
                         {
-                            Scene->meshes.AddTexture(mesh.name, image.name, *&resourceReader->ReadBinaryData<unsigned char>(document, document.bufferViews.Elements()[std::stoi(image.bufferViewId)]));
+                            Scene->meshes.AddTexture(mesh.name, image.name, resourceReader->ReadBinaryData<unsigned char>(document, document.bufferViews.Elements()[std::stoi(image.bufferViewId)]));
                         }
                     }
                     else

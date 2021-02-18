@@ -47,7 +47,7 @@ namespace SceneContent
 		}
 	}
 
-	void Meshes::AddTexture(std::string name, std::string path, std::vector<unsigned char>& data)
+	void Meshes::AddTexture(std::string name, std::string path, std::vector<unsigned char> data)
 	{
 		if (TextureLocationMap.find(path) != TextureLocationMap.end())
 		{

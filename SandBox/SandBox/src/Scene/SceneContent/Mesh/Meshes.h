@@ -13,7 +13,7 @@ namespace SceneContent
 
 		void AddMesh(std::string name, Mesh& mesh);
 		void AddTexture(std::string name, std::string path);
-		void AddTexture(std::string name, std::string path, std::vector<unsigned char>& data);
+		void AddTexture(std::string name, std::string path, std::vector<unsigned char> data);
 
 		void Load();
 

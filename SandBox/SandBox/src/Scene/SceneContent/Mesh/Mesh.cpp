@@ -34,7 +34,7 @@ namespace SceneContent
 		//m_VertexArrayBuffer = nullptr;
 	}
 
-	void Mesh::AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned char>& primetive)
+	void Mesh::AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned char> primetive)
 	{
 
 		if (primetives.find(name) != primetives.end())
@@ -52,7 +52,7 @@ namespace SceneContent
 		count++;
 	}
 
-	void Mesh::AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned short>& primetive)
+	void Mesh::AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned short> primetive)
 	{
 
 		if (primetives.find(name) != primetives.end())
@@ -70,7 +70,7 @@ namespace SceneContent
 		count++;
 	}
 
-	void Mesh::AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<int>& primetive)
+	void Mesh::AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<int> primetive)
 	{
 
 		if (primetives.find(name) != primetives.end())
@@ -88,7 +88,7 @@ namespace SceneContent
 		count++;
 	}
 
-	void Mesh::AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned int>& primetive)
+	void Mesh::AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned int> primetive)
 	{
 
 		if (primetives.find(name) != primetives.end())
@@ -106,7 +106,7 @@ namespace SceneContent
 		count++;
 	}
 
-	void Mesh::AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<float>& primetive)
+	void Mesh::AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<float> primetive)
 	{
 
 		if (primetives.find(name) != primetives.end())

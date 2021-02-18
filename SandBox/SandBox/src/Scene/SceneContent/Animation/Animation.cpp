@@ -9,7 +9,7 @@ namespace SceneContent
     Animation::~Animation()
     {}
     
-    void Animation::addTranslation(std::string name, std::vector<float>& translation)
+    void Animation::addTranslation(std::string name, std::vector<float> translation)
     {
         for (size_t i = 0; i < translation.size(); i += 3)
         {
@@ -17,7 +17,7 @@ namespace SceneContent
         }
     }
 
-    void Animation::addQuaternion(std::string name, std::vector<float>& rotation)
+    void Animation::addQuaternion(std::string name, std::vector<float> rotation)
     {
         for (size_t i = 0; i < rotation.size(); i += 4)
         {
@@ -25,7 +25,7 @@ namespace SceneContent
         }
     }
 
-    void Animation::addScale(std::string name, std::vector<float>& scale)
+    void Animation::addScale(std::string name, std::vector<float> scale)
     {
         for (size_t i = 0; i < scale.size(); i += 3)
         {

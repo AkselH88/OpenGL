@@ -52,9 +52,9 @@ namespace SceneContent
         void addMaxTime(float time) { maxTime = time; }
         float getMaxTime() const { return maxTime; }
 
-        void addTranslation(std::string name, std::vector<float>& translation);
-        void addQuaternion(std::string name, std::vector<float>& rotation);
-        void addScale(std::string name, std::vector<float>& scale);
+        void addTranslation(std::string name, std::vector<float> translation);
+        void addQuaternion(std::string name, std::vector<float> rotation);
+        void addScale(std::string name, std::vector<float> scale);
 
         bool evaluate(float deltaTime, bool loop);
         bool controlTime(AnimationData& data, float deltaTime);

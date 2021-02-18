@@ -116,14 +116,14 @@ namespace SceneContent
 		void SetMeshId(unsigned int meshId) { this->meshID = meshId; }
 		unsigned int GetMeshId() { return meshID; }
 
-		void AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned char>& primetive);
-		void AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned short>& primetive);
-		void AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<int>& primetive);
-		void AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned int>& primetive);
-		void AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<float>& primetive);
+		void AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned char> primetive);
+		void AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned short> primetive);
+		void AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<int> primetive);
+		void AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<unsigned int> primetive);
+		void AddPrimetive(std::string name, unsigned int primetiveType, unsigned int vector, std::vector<float> primetive);
 
-		void AddIndices(unsigned int primetiveType, std::vector<unsigned short>& primetive)	{ indices.AddPrimetiveType(primetiveType); indices.AddPrimetive(primetive); count++; }
-		void AddIndices(unsigned int primetiveType, std::vector<unsigned int>& primetive)	{ indices.AddPrimetiveType(primetiveType); indices.AddPrimetive(primetive); count++; }
+		void AddIndices(unsigned int primetiveType, std::vector<unsigned short> primetive)	{ indices.AddPrimetiveType(primetiveType); indices.AddPrimetive(primetive); count++; }
+		void AddIndices(unsigned int primetiveType, std::vector<unsigned int> primetive)	{ indices.AddPrimetiveType(primetiveType); indices.AddPrimetive(primetive); count++; }
 
 		const std::vector<float> GetPrimetive(std::string name);
 
