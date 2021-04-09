@@ -1,7 +1,7 @@
 #include "Window.h"
 
 Window::Window()
-    :m_Window(nullptr), m_Gui(nullptr)
+    :m_Window(nullptr), m_Gui(nullptr), vSync(true)
 {
     if (!glfwInit())
         data.Initialized = false;
@@ -26,7 +26,7 @@ Window::Window()
 
             OnEventInit();
 
-            SetVSync(true);
+            SetVSync(vSync);
 
             // tell GLFW to capture our mouse
             glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
@@ -91,7 +91,6 @@ bool Window::IsOpen()
 
 void Window::SetVSync(bool VSync)
 {
-    data.VSync = VSync;
     glfwSwapInterval(VSync);
 }
 
@@ -218,6 +217,10 @@ void Window::OnUpdate()
     renderer.Clear();
     updateTime();
     m_Gui->OnUpdate();
+
+    ImGui::Checkbox("VSync", &vSync);
+    SetVSync(vSync);
+
     data.camera.OnUpdate(data.deltaTime, &data.buttons);
 }
 

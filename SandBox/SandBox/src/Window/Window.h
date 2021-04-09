@@ -22,7 +22,7 @@ public:
 	bool IsOpen();
 
 	void SetVSync(bool vsync);
-	bool IsVSync() { return data.VSync; }
+	bool IsVSync() { return vSync; }
 
 	float FrameTime() { return data.deltaTime; }
 
@@ -44,7 +44,6 @@ private:
 		unsigned int Height = NULL;
 
 		bool Initialized = bool();
-		bool VSync = bool();
 		bool IsOpen = bool();
 
 		float deltaTime = float();
@@ -59,6 +58,8 @@ private:
 
 		Camera camera;
 	};
+
+	bool vSync;
 	WindowContentConteiner data;
 
 	GLFWwindow* m_Window;
