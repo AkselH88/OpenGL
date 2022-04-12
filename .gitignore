@@ -1,3 +1,6 @@
 **/.vs
 SandBox/Debug/
 SandBox/Release/
+/Engine
+/third_party
+/Pong3D

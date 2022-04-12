@@ -1,22 +1,29 @@
-#include "Window/Window.h"
-#include "Scene/Scene.h"
-#include "Scene/Level.h"
-#include "Scene/Object.h"
-#include "Scene/Character.h"
+#include "Engine.h"
 
-int main(void)
+Engine::Engine()
+    : err(0), world(nullptr), player(nullptr)
 {
-    Window window;
     if (!window.InitOK())
-        return -1;
+        err = -1;
 
     //Camera camera;
-     
-    Scene::Level* world = new Scene::Level("res/glTF/terrain.glb");
-    Scene::Character* player = new Scene::Character("res/glTF/main_faster.glb");
+
+    world = new Scene::Level("res/glTF/terrain.glb");
+    player = new Scene::Character("res/glTF/main_faster.glb");
 
     world->Init();
     player->Init();
+}
+
+Engine::~Engine()
+{
+    Turmenate();
+}
+
+void Engine::Run()
+{
+    if (err == -1)
+        return;
 
     while (window.IsOpen())
     {
@@ -33,10 +40,15 @@ int main(void)
         /* Render */
         window.OnRender();
     }
+}
+
+int Engine::Turmenate()
+{
     delete world, world = nullptr;
     delete player, player = nullptr;
 
     window.OnTerminate();
 
-    return 0;
+    return err;
 }
+
