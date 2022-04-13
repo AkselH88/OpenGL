@@ -1,0 +1,3 @@
+[submodule "SandBox/SandBox/src/third_party/rapidjson"]
+	path = SandBox/SandBox/src/third_party/rapidjson
+	url = https://github.com/Tencent/rapidjson
